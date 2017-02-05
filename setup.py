@@ -1,22 +1,22 @@
 #!/usr/bin/env python
-#-*- encoding: utf-8; grammar-ext: py; mode: python -*-
+# -*- encoding: utf-8; grammar-ext: py; mode: python -*-
 
-#=========================================================================
+# ========================================================================
 """
-  Copyright |(c)| 2015-2016 `Matt Bogosian`_ (|@posita|_).
+  Copyright |(c)| 2015-2017 `Matt Bogosian`_ (|@posita|_).
 
   .. |(c)| unicode:: u+a9
   .. _`Matt Bogosian`: mailto:mtb19@columbia.edu
   .. |@posita| replace:: **@posita**
   .. _`@posita`: https://github.com/posita
 
-  Please see the accompanying ``LICENSE`` (or ``LICENSE.txt``) file for
+  Please see the accompanying ``LICENSE`` and ``CREDITS`` file(s) for
   rights and restrictions governing use of this software. All rights not
   expressly waived or licensed are reserved. If such a file did not
   accompany this software, then please contact the author before viewing
   or using this software in any capacity.
 """
-#=========================================================================
+# ========================================================================
 
 from __future__ import (
     absolute_import, division, print_function,
@@ -24,20 +24,20 @@ from __future__ import (
     # unicode_literals,
 )
 
-#---- Imports ------------------------------------------------------------
+# ---- Imports -----------------------------------------------------------
 
 import setuptools
 
 # See this e-mail thread:
 # <http://www.eby-sarna.com/pipermail/peak/2010-May/003348.html>
-import logging # pylint: disable=unused-import
-import multiprocessing # pylint: disable=unused-import
+import logging  # noqa: F401; pylint: disable=unused-import
+import multiprocessing  # noqa: F401; pylint: disable=unused-import
 
 import inspect
 import os
 from os import path
 
-#---- Constants ----------------------------------------------------------
+# ---- Constants ---------------------------------------------------------
 
 __all__ = ()
 
@@ -47,7 +47,7 @@ INSTALL_REQUIRES = [
 
 _MY_DIR = path.dirname(inspect.getframeinfo(inspect.currentframe()).filename)
 
-#---- Initialization -----------------------------------------------------
+# ---- Initialization ----------------------------------------------------
 
 _namespace = {
     '_version_path': path.join(_MY_DIR, '_skel', 'version.py'),
@@ -55,24 +55,23 @@ _namespace = {
 
 if path.isfile(_namespace['_version_path']):
     with open(_namespace['_version_path']) as _version_file:
-        exec(compile(_version_file.read(), _namespace['_version_path'], 'exec'), _namespace, _namespace) # pylint: disable=exec-used
+        exec(compile(_version_file.read(), _namespace['_version_path'], 'exec'), _namespace, _namespace)  # pylint: disable=exec-used
 
 with open(path.join(_MY_DIR, 'README.rst')) as _readme_file:
     README = _readme_file.read()
 
-__version__ = _namespace.get('__version__')
-__version__ = u'.'.join(( str(i) for i in __version__ )) if __version__ is not None else None
-__release__ = _namespace.get('__release__', __version__)
+__vers_str__ = _namespace.get('__vers_str__')
+__release__ = _namespace.get('__release__', __vers_str__)
 
 _SETUP_ARGS = {
-    'name'                : '_skel',
-    'version'             : __version__,
-    'author'              : 'Matt Bogosian',
-    'author_email'        : 'mtb19@columbia.edu',
-    'url'                 : 'https://_skel.readthedocs.org/en/{}/'.format(__release__),
-    'license'             : 'MIT License',
-    'description'         : 'Python Project Skeleton',
-    'long_description'    : README,
+    'name': 'py_skel',
+    'version': __vers_str__,
+    'author': 'Matt Bogosian',
+    'author_email': 'mtb19@columbia.edu',
+    'url': 'https://_skel.readthedocs.org/en/{}/'.format(__release__),
+    'license': 'MIT License',
+    'description': 'Python Project Skeleton',
+    'long_description': README,
 
     # From <https://pypi.python.org/pypi?%3Aaction=list_classifiers>
     'classifiers': (
@@ -85,13 +84,14 @@ _SETUP_ARGS = {
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
     ),
 
-    'packages'            : setuptools.find_packages(exclude = ( 'tests', )),
+    'packages': setuptools.find_packages(exclude=( 'tests', )),
     'include_package_data': True,
-    'install_requires'    : INSTALL_REQUIRES,
+    'install_requires': INSTALL_REQUIRES,
 }
 
 if __name__ == '__main__':

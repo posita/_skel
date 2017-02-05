@@ -10,21 +10,16 @@
     :maxdepth: 3
     :hidden:
 
-Copyright |(c)| 2015-2016 `Matt Bogosian`_ (|@posita|_).
+Copyright |(c)| 2015-2017 `Matt Bogosian`_ (|@posita|_).
 
 .. |(c)| unicode:: u+a9
 .. _`Matt Bogosian`: mailto:mtb19@columbia.edu?Subject=_skel
 .. |@posita| replace:: **@posita**
 .. _`@posita`: https://github.com/posita
 
-Please see the accompanying |LICENSE|_ (or |LICENSE.txt|_) file for rights and restrictions governing use of this software.
+Please see the accompanying :doc:`LICENSE <LICENSE>` and :doc:`CREDITS <CREDITS>` file(s) for rights and restrictions governing use of this software.
 All rights not expressly waived or licensed are reserved.
 If such a file did not accompany this software, then please contact the author before viewing or using this software in any capacity.
-
-.. |LICENSE| replace:: ``LICENSE``
-.. _`LICENSE`: _sources/LICENSE.txt
-.. |LICENSE.txt| replace:: ``LICENSE.txt``
-.. _`LICENSE.txt`: _sources/LICENSE.txt
 
 Contributing to ``_skel``
 =========================
@@ -49,9 +44,9 @@ There are only a few guidelines:
 
 *   If it isn't already there, please add your name (and optionally your GitHub username, email, website address, or other contact information) to the ``CREDITS`` file::
 
-    ...
-    *   Gordon the Turtle <https://github.com/GordonTheTurtle>
-    ...
+        ...
+        *   `Gordon the Turtle <https://github.com/GordonTheTurtle>`_
+        ...
 
 *   Try to follow the source conventions as you observe them.
     (Note: I have purposely avoided aspects of `PEP8 <https://www.python.org/dev/peps/pep-0008/>`_, in part because I have adopted conventions developed from my experiences with other languages, but mostly because I'm growing older and more stubborn.)
@@ -63,11 +58,12 @@ There are only a few guidelines:
     (There are exceptions, but if there is any doubt, they probably don't apply.)
 
     Unit tests live in ``./tests``.
-    Integrations tests live in ``./integration/tests``.
     Tests can be run with ``tox [-e TOX_ENV]`` (requires `tox <https://tox.readthedocs.org/en/latest/>`__) or ``"${PYTHON:-python}" setup.py test``.
 
-    Note that integration tests are not run by default.
-    Integration tests require `Node.js <https://nodejs.org/en/>`__ and can be run with either ``TOX_ENV=... ./runtests.sh`` (which will run all unit tests and integration tests for ``TOX_ENV``) or ``[TOX_ENV=...] ./runintegrations.sh``.
+    There are two helper scripts that may be of interest.
+    To set up a virtual environment (via ``virtualenv``) for development and to run tests inside that virtual environment, you can do the following::
+
+        ( . ./venvsetup.sh && ./runtests.sh [-e TOX_ENV] )
 
 ..
 

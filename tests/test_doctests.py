@@ -1,29 +1,30 @@
-#-*- encoding: utf-8; grammar-ext: py; mode: python -*-
+#!/usr/bin/env python
+# -*- encoding: utf-8; grammar-ext: py; mode: python -*-
 
-#=========================================================================
+# ========================================================================
 """
-  Copyright |(c)| 2015-2016 `Matt Bogosian`_ (|@posita|_).
+  Copyright |(c)| 2015-2017 `Matt Bogosian`_ (|@posita|_).
 
   .. |(c)| unicode:: u+a9
   .. _`Matt Bogosian`: mailto:mtb19@columbia.edu
   .. |@posita| replace:: **@posita**
   .. _`@posita`: https://github.com/posita
 
-  Please see the accompanying ``LICENSE`` (or ``LICENSE.txt``) file for
+  Please see the accompanying ``LICENSE`` and ``CREDITS`` file(s) for
   rights and restrictions governing use of this software. All rights not
   expressly waived or licensed are reserved. If such a file did not
   accompany this software, then please contact the author before viewing
   or using this software in any capacity.
 """
-#=========================================================================
+# ========================================================================
 
 from __future__ import (
     absolute_import, division, print_function, unicode_literals,
 )
-from builtins import * # pylint: disable=redefined-builtin,unused-wildcard-import,useless-suppression,wildcard-import
-from future.builtins.disabled import * # pylint: disable=redefined-builtin,unused-wildcard-import,useless-suppression,wildcard-import
+from builtins import *  # noqa: F401,F403; pylint: disable=redefined-builtin,unused-wildcard-import,useless-suppression,wildcard-import
+from future.builtins.disabled import *  # noqa: F401,F403; pylint: disable=redefined-builtin,unused-wildcard-import,useless-suppression,wildcard-import
 
-#---- Imports ------------------------------------------------------------
+# ---- Imports -----------------------------------------------------------
 
 import doctest
 import logging
@@ -35,7 +36,7 @@ import types
 import _skel
 import tests
 
-#---- Constants ----------------------------------------------------------
+# ---- Constants ---------------------------------------------------------
 
 __all__ = (
     'load_tests',
@@ -51,10 +52,10 @@ _DOCTEST_ROOTS = (
 
 _LOGGER = logging.getLogger(__name__)
 
-#---- Functions ----------------------------------------------------------
+# ---- Functions ---------------------------------------------------------
 
-#=========================================================================
-def load_tests(_, tests, __): # pylint: disable=redefined-outer-name
+# ========================================================================
+def load_tests(_, tests, __):  # pylint: disable=redefined-outer-name
     """
     >>> True is not False
     True
@@ -68,7 +69,7 @@ def load_tests(_, tests, __): # pylint: disable=redefined-outer-name
 
     return tests
 
-#=========================================================================
+# ========================================================================
 def mkloadtests(roots):
     """
     Creates the `load_tests` hook function to be called by
@@ -97,7 +98,7 @@ def mkloadtests(roots):
 
     :note: I should *not* have to write this myself. *Grrr!*
     """
-    def load_tests(_, tests, __): # pylint: disable=redefined-outer-name,unused-argument
+    def load_tests(_, tests, __):  # pylint: disable=redefined-outer-name
         finder = doctest.DocTestFinder(exclude_empty=False)
 
         for root_mod in roots:
@@ -136,17 +137,17 @@ def mkloadtests(roots):
 
                     try:
                         tests.addTest(doctest.DocTestSuite(test_mod_name, test_finder=finder))
-                    except Exception as err: # pylint: disable=broad-except
+                    except Exception as err:  # pylint: disable=broad-except
                         _LOGGER.warning('unable to load doctests from %s (%s)', test_mod_name, err)
 
         return tests
 
     return load_tests
 
-#=========================================================================
+# ========================================================================
 _load_tests = mkloadtests(_DOCTEST_ROOTS)
 
-#---- Initialization -----------------------------------------------------
+# ---- Initialization ----------------------------------------------------
 
 if __name__ == '__main__':
     from unittest import main

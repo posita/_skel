@@ -10,21 +10,16 @@
     :maxdepth: 3
     :hidden:
 
-Copyright |(c)| 2015-2016 `Matt Bogosian`_ (|@posita|_).
+Copyright |(c)| 2015-2017 `Matt Bogosian`_ (|@posita|_).
 
 .. |(c)| unicode:: u+a9
 .. _`Matt Bogosian`: mailto:mtb19@columbia.edu?Subject=_skel
 .. |@posita| replace:: **@posita**
 .. _`@posita`: https://github.com/posita
 
-Please see the accompanying |LICENSE|_ (or |LICENSE.txt|_) file for rights and restrictions governing use of this software.
+Please see the accompanying :doc:`LICENSE <LICENSE>` and :doc:`CREDITS <CREDITS>` file(s) for rights and restrictions governing use of this software.
 All rights not expressly waived or licensed are reserved.
 If such a file did not accompany this software, then please contact the author before viewing or using this software in any capacity.
-
-.. |LICENSE| replace:: ``LICENSE``
-.. _`LICENSE`: _sources/LICENSE.txt
-.. |LICENSE.txt| replace:: ``LICENSE.txt``
-.. _`LICENSE.txt`: _sources/LICENSE.txt
 
 Introduction
 ============
@@ -41,7 +36,7 @@ Installation
 ------------
 
 This project is not meant to be installed as is, but rather cloned and then modified as necessary.
-It is intended that derived projects allow installation via ``pip``:
+It is intended that derived projects allow installation via ``pip``.
 
 Installation can be performed via ``pip`` (which will download and install the `latest release <https://pypi.python.org/pypi/_skel/>`__):
 
@@ -62,8 +57,6 @@ Alternately, you can download the sources (e.g., `from GitHub <https://github.co
 
 Requirements
 ------------
-
-The service you want to consume must use v1.x of the Socket.IO protocol. Earlier versions are not supported.
 
 A modern version of Python is required:
 

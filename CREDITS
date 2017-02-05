@@ -1,5 +1,3 @@
-Written by Matt Bogosian <https://github.com/posita>.
-
 The following individuals or entities have created and contributed
 derivative works of this software. By adding your name to this list, you
 transfer all title, license, and any other rights to your contributions to
@@ -15,6 +13,4 @@ contribution.
 
 Contributors:
 
-* Roger Hoover <https://github.com/theduderog> (see <https://gist.github.com/theduderog/735556>)
-* Terry Jones <http://blogs.fluidinfo.com/terry/about/> (see <http://blogs.fluidinfo.com/terry/2009/11/12/twisted-code-for-retrying-function-calls/>)
-* <https://github.com/htoothrot> (see <https://gist.github.com/theduderog/735556>)
+* `NAME <CONTACT_URL>`_ (see `REPO_URL <REPO_URL>`_)
