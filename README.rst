@@ -58,21 +58,10 @@ Jeff Knupp (|@jeffknupp|_) `describes how <https://www.jeffknupp.com/blog/2013/0
 
 ..
 
+**UPDATE: This project is no longer maintained or supported. Issues, pull requests, and other contributions will be ignored.**
+
 ``_skel`` is a project skeleton for Python.
 It is licensed under the `MIT License <https://opensource.org/licenses/MIT>`_.
 See the |LICENSE|_ file for details.
 Source code is `available on GitHub <https://github.com/posita/_skel>`__.
 See `the docs <https://_skel.readthedocs.org/en/master/>`__ for more information.
-
-Examples
---------
-
-.. TODO
-
-Coming soon.
-
-Issues
-------
-
-If you find a bug, or want a feature, please `file an issue <https://github.com/posita/_skel/issues>`__ (if it has not already been filed).
-If you are willing and able, consider `contributing <https://_skel.readthedocs.org/en/master/contrib.html>`__.
