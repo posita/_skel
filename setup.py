@@ -78,6 +78,19 @@ SETUP_ARGS = {
     "include_package_data": True,
     "install_requires": ["typing"],
     "entry_points": {"console_scripts": ("_skel = _skel.main:main",)},
+    "extras_require": {
+        "dev": [
+            "black",
+            "debug",
+            "flake8",
+            "jedi",
+            "mypy",
+            "pylint",
+            "pytest-cov",
+            "tox",
+            "twine",
+        ],
+    },
 }
 
 if __name__ == "__main__":

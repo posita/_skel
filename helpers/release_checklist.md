@@ -9,11 +9,13 @@
 Copyright and other protections apply.
 Please see the accompanying [`LICENSE`](../LICENSE) file for rights and restrictions governing use of this software.
 All rights not expressly waived or licensed are reserved.
-If that file is missing or appears to be modified from its originals, then please contact the author before viewing or using this software in any capacity.
+If that file is missing or appears to be modified from its original, then please contact the author before viewing or using this software in any capacity.
+
+The following assumes you are working from the repository root and have a development environment similar to one created by `pip install install --editable '.[dev]'`. (See, e.g., [`./helpers/venvsetup.sh`](venvsetup.sh).)
 
 - [ ] If necessary, update copyright in [`LICENSE`](../LICENSE) and [`docs/conf.py`](../docs/conf.py)
 
-- [ ] [`./helpers/release.sh`](../helpers/release.sh)
+- [ ] [`./helpers/release.sh`](release.sh)
 
 - [ ] `git push --tags`
 
